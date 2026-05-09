@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 自製 LINE 貼圖 · 12hr 兩階段講師簡報集｜弄一下工作室</title>
+<meta name="description" content="弄一下工作室 12 小時 LINE 貼圖製作課程的講師簡報集。Part 1 入門 4hr 28 頁 + Part 2 進階 8hr 38 頁，全免費工具、自用導向、含完整上架流程。">
+<meta property="og:title" content="AI 自製 LINE 貼圖 · 12hr 講師簡報集">
+<meta property="og:description" content="2 份 deck · 14 單元 · 66 頁。打開即用的講師簡報。">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#2a1e13">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2a1e13;
+    --ink-rgb:42,30,19;
+    --paper:#eedfc7;
+    --paper-rgb:238,223,199;
+    --paper-tint:#e0d0b6;
+    --ink-tint:#3a2a1d;
+    --serif-zh:"Noto Serif SC",serif;
+    --sans-zh:"Noto Sans SC",sans-serif;
+    --serif-en:"Playfair Display",Georgia,serif;
+    --mono:"IBM Plex Mono",monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--paper);color:var(--ink);font-family:var(--sans-zh);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;line-height:1.65}
+  a{color:inherit;text-decoration:none}
+  em{font-family:var(--serif-en),var(--serif-zh);font-style:italic;font-weight:inherit;letter-spacing:.03em;font-synthesis-style:none;-webkit-font-synthesis:weight;position:relative;z-index:1}
+  em::after{content:"";position:absolute;left:-.08em;right:-.08em;bottom:.04em;height:.24em;z-index:-1;pointer-events:none;background:rgba(var(--ink-rgb),.13);border-radius:1px}
+
+  .topbar{position:sticky;top:0;z-index:50;height:56px;background:rgba(var(--paper-rgb),.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(var(--ink-rgb),.12);display:flex;align-items:center;padding:0 6vw;gap:18px;font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+  .topbar .logo{font-family:var(--serif-zh);font-weight:700;font-size:14px;letter-spacing:.05em;text-transform:none}
+  .topbar .sep{width:1px;height:14px;background:rgba(var(--ink-rgb),.25)}
+  .topbar .spacer{flex:1}
+  .topbar .ver{opacity:.55;font-size:11px}
+
+  .hero{padding:14vh 6vw 10vh}
+  .hero .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.3em;text-transform:uppercase;opacity:.55;margin-bottom:3vh}
+  .hero h1{font-family:var(--serif-zh);font-weight:900;font-size:min(8.4vw,124px);line-height:.96;letter-spacing:-.02em;margin-bottom:3vh}
+  .hero .sub{font-family:var(--serif-zh);font-weight:500;font-size:min(3vw,38px);line-height:1.25;opacity:.72;margin-bottom:4vh;max-width:36em}
+  .hero .lead{font-family:var(--serif-zh);font-weight:400;font-size:min(1.4vw,21px);line-height:1.6;opacity:.86;max-width:38em;margin-bottom:5vh}
+  .hero .meta{display:flex;gap:1.6em;flex-wrap:wrap;font-family:var(--mono);font-size:max(11px,.9vw);letter-spacing:.16em;text-transform:uppercase;opacity:.6}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:3vw;padding:0 6vw 8vh;border-bottom:1px solid rgba(var(--ink-rgb),.12)}
+  .stat{padding-top:2vh;border-top:1px solid var(--ink)}
+  .stat .l{font-family:var(--mono);font-size:max(10px,.78vw);letter-spacing:.24em;text-transform:uppercase;opacity:.55;margin-bottom:1vh}
+  .stat .n{font-family:var(--serif-en);font-weight:800;font-size:min(5.4vw,80px);line-height:.9;letter-spacing:-.03em;font-feature-settings:"tnum"}
+  .stat .u{font-family:var(--serif-zh);font-weight:500;font-size:.4em;letter-spacing:0;opacity:.7;margin-left:.16em}
+
+  .modules{padding:10vh 6vw 6vh}
+  .modules-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6vh;flex-wrap:wrap;gap:2vh}
+  .modules-head h2{font-family:var(--serif-zh);font-weight:700;font-size:min(4vw,56px);line-height:1.1;letter-spacing:-.01em}
+  .modules-head .right{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:.6}
+
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:4vh 3vw}
+
+  .card{display:block;padding:5vh 3vw;background:rgba(var(--ink-rgb),.04);border:1px solid rgba(var(--ink-rgb),.12);border-radius:6px;transition:background .25s ease,border-color .25s ease,transform .25s ease;position:relative;overflow:hidden}
+  .card:hover{background:rgba(var(--ink-rgb),.07);border-color:rgba(var(--ink-rgb),.32);transform:translateY(-2px)}
+  .card .meta{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:2.4vh;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.6}
+  .card .nb{font-family:var(--serif-en);font-weight:800;font-size:min(7vw,108px);line-height:.85;letter-spacing:-.04em;font-feature-settings:"tnum";margin-bottom:1.2vh;opacity:.84}
+  .card h3{font-family:var(--serif-zh);font-weight:700;font-size:min(2.8vw,38px);line-height:1.2;letter-spacing:-.005em;margin-bottom:1.4vh}
+  .card .sub{font-family:var(--serif-zh);font-weight:400;font-size:max(13px,1.1vw);line-height:1.55;opacity:.74;margin-bottom:2.6vh}
+  .card .stats-row{display:flex;gap:2em;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.55;margin-bottom:2vh;flex-wrap:wrap}
+  .card .open{display:inline-flex;align-items:center;gap:.6em;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:.4em}
+  .card.featured{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .card.featured .open{opacity:1}
+  .card.featured em::after{background:rgba(var(--paper-rgb),.16)}
+
+  .ops{padding:8vh 6vw 6vh;border-top:1px solid rgba(var(--ink-rgb),.12)}
+  .ops h3{font-family:var(--serif-zh);font-weight:700;font-size:min(3vw,42px);margin-bottom:4vh}
+  .ops-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3vw 4vh}
+  .op-card{padding-top:1.6vh;border-top:1px solid rgba(var(--ink-rgb),.32)}
+  .op-card .l{font-family:var(--mono);font-size:max(10px,.78vw);letter-spacing:.24em;text-transform:uppercase;opacity:.55;margin-bottom:1vh}
+  .op-card h4{font-family:var(--serif-zh);font-weight:700;font-size:min(1.7vw,22px);margin-bottom:1vh}
+  .op-card p{font-family:var(--sans-zh);font-size:max(13px,1vw);line-height:1.65;opacity:.78}
+  .op-card kbd{display:inline-block;padding:.2em .55em;background:rgba(var(--ink-rgb),.08);border:1px solid rgba(var(--ink-rgb),.2);border-radius:3px;font-family:var(--mono);font-size:.86em}
+
+  .about{padding:8vh 6vw;background:var(--paper-tint);border-top:1px solid rgba(var(--ink-rgb),.12)}
+  .about-grid{display:grid;grid-template-columns:1.2fr 2fr;gap:4vw 6vh}
+  .about-grid .label{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;opacity:.55}
+  .about-grid p{font-family:var(--serif-zh);font-size:max(14px,1.1vw);line-height:1.7;opacity:.86}
+  .about-grid p + p{margin-top:1.4vh}
+
+  footer{padding:6vh 6vw;display:flex;justify-content:space-between;align-items:baseline;gap:2vh;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.55}
+  footer .logo{font-family:var(--serif-zh);font-weight:700;font-size:13px;letter-spacing:.05em;text-transform:none;opacity:1}
+
+  @media(max-width:900px){
+    .stats{grid-template-columns:repeat(2,1fr);gap:4vh 4vw}
+    .grid{grid-template-columns:1fr}
+    .ops-grid{grid-template-columns:1fr}
+    .about-grid{grid-template-columns:1fr}
+    .hero h1{font-size:13vw}
+    .hero .sub{font-size:5.5vw}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="logo" href="./">弄一下工作室</a>
+  <div class="sep"></div>
+  <span>Lecturer Decks · 12hr 兩階段</span>
+  <div class="spacer"></div>
+  <span class="ver">2026</span>
+</header>
+
+<section class="hero">
+  <div class="kicker">A Magazine of Lectures · Self-use Stickers · 2026</div>
+  <h1>AI 自製<br>LINE <em>貼圖</em></h1>
+  <div class="sub">2 份 deck · 14 單元 · 66 頁<br>從 0 到上架的 12 小時養成</div>
+  <p class="lead">
+    這套兩份簡報專為「想做專屬 LINE 貼圖送朋友 / 自用」的個人創作者設計。
+    Part 1 用一個下午做出 8 張靜態貼圖並送審；Part 2 用一整天升級到 24 張動態 + 訊息貼圖。
+    全程免費工具、不討論變現、不教畫畫——靠 AI 把學員想像中的角色固定下來，再走完 LINE 規格與上架流程。
+  </p>
+  <div class="meta">
+    <span>Self-use · Not Commercial</span>
+    <span>·</span>
+    <span>Free Tools Only</span>
+    <span>·</span>
+    <span>Complete Upload Flow</span>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="stat"><div class="l">Total Hours</div><div class="n">12<span class="u">hr</span></div></div>
+  <div class="stat"><div class="l">Decks</div><div class="n">2</div></div>
+  <div class="stat"><div class="l">Units</div><div class="n">14</div></div>
+  <div class="stat"><div class="l">Total Slides</div><div class="n">66</div></div>
+</section>
+
+<section class="modules">
+  <div class="modules-head">
+    <h2>兩階段 <em>· 連續但獨立</em></h2>
+    <div class="right">Part 1 入門 → Part 2 進階</div>
+  </div>
+  <div class="grid">
+
+    <a class="card featured" href="part1.html">
+      <div class="meta"><span>Part 01 · 入門班</span><span>28 / 28</span></div>
+      <div class="nb">01</div>
+      <h3>一個下午做出<br><em>8 張</em> 靜態貼圖並送審</h3>
+      <div class="sub">角色設定 + AI 角色一致性 3 手法 → 8 張表情產出實戰 → 透明背景 + 規格符合 → Creators Market 上架 → 退件 SOP。當天就能跟朋友炫耀「我做了一套自己的貼圖」。</div>
+      <div class="stats-row"><span>4 hr</span><span>6 CH + PRAC1</span><span>橘貓上班族</span></div>
+      <span class="open">開啟 Part 1 簡報 →</span>
+    </a>
+
+    <a class="card" href="part2.html">
+      <div class="meta"><span>Part 02 · 進階班</span><span>38 / 38</span></div>
+      <div class="nb">02</div>
+      <h3>一整天升級到<br><em>24 張</em> 動態 + 訊息貼圖</h3>
+      <div class="sub">動態貼圖原理 + APNG 規格 → AI 產關鍵幀（眨眼 / 揮手 / 跳起來）→ APNG 組裝 + 壓縮 SOP → 訊息貼圖 + 24 張選題框架 → 多角度 + 多風格延伸 → 進階上架。Part 1 學完才能上。</div>
+      <div class="stats-row"><span>8 hr</span><span>8 CH + PRAC2</span><span>粉紅水母</span></div>
+      <span class="open">開啟 Part 2 簡報 →</span>
+    </a>
+
+  </div>
+</section>
+
+<section class="ops">
+  <h3>操作方式 <em>· How to lecture</em></h3>
+  <div class="ops-grid">
+    <div class="op-card">
+      <div class="l">Navigation · 翻頁</div>
+      <h4>四種方式都行</h4>
+      <p><kbd>←</kbd> <kbd>→</kbd> 鍵盤翻頁、滑鼠滾輪、觸控板左右滑動、底部圓點直接跳。</p>
+    </div>
+    <div class="op-card">
+      <div class="l">Overview · 索引</div>
+      <h4>ESC 看全貌</h4>
+      <p>按 <kbd>Esc</kbd> 進入縮圖總覽，看清整份簡報的章節節奏，再點任一頁跳到該頁。再按 <kbd>Esc</kbd> 退出。</p>
+    </div>
+    <div class="op-card">
+      <div class="l">Pipeline · 互動</div>
+      <h4>逐步點亮</h4>
+      <p>有些頁面是流程（如三層去背救援、APNG 組裝、24 張選題框架）。按 <kbd>→</kbd> 會逐個點亮 step。</p>
+    </div>
+    <div class="op-card">
+      <div class="l">Lecture Note · 講義連結</div>
+      <h4>對應主課程網頁</h4>
+      <p>每一頁右上角的「講義 · MX-X ↗」可點開新分頁，跳到主課程網站對應 .html 詳細講義。需密碼。</p>
+    </div>
+    <div class="op-card">
+      <div class="l">Aspect · 比例</div>
+      <h4>16:9 全螢幕投影</h4>
+      <p>所有 deck 設計給 16:9 全螢幕投影。投影前按 <kbd>F11</kbd>（Mac 用 Safari/Chrome 全螢幕鍵）達到最佳效果。</p>
+    </div>
+    <div class="op-card">
+      <div class="l">Browser · 相容</div>
+      <h4>現代瀏覽器</h4>
+      <p>Chrome / Edge / Safari / Firefox 最新版皆可。不依賴後端，<em>單檔離線</em>也能跑（含 WebGL 背景與動效）。</p>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="about-grid">
+    <div>
+      <div class="label">About · 關於本簡報集</div>
+      <h3 style="font-family:var(--serif-zh);font-weight:700;font-size:min(3vw,40px);margin-top:1vh;line-height:1.2">為手作教學設計</h3>
+    </div>
+    <div>
+      <p>這套 66 頁的講師簡報專為「<em>個人創作者 + 自用導向 + 全免費工具</em>」的工作坊設計。跟商業導向的 AI 圖像課刻意區隔——不教變現、不講行銷、不討論「賣得動嗎」。追求一件事：學員當天能帶走一套自己滿意、能跟朋友炫耀的貼圖。</p>
+      <p>視覺基調採牛皮紙主題（陶土橘 + 暖米黃）——像鄰居教手作的溫度，不是設計師講座的距離。<em>退件當常態</em>：每份 deck 都明確告訴學員「被退是過程不是失敗」，給對應的修補 SOP。</p>
+      <p>跟學員自學講義不同：自學講義是給學員下課後讀的、需要密集圖文與步驟細節；本簡報是給<em>講師</em>用的、追求現場節奏感、視覺密度與互動 pipeline。兩者互補。</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="logo">弄一下工作室</span>
+  <span>AI 自製 LINE 貼圖 · 12hr 兩階段 · Lecturer Decks</span>
+  <span>2026 · MIT-Style Open</span>
+</footer>
+
+</body>
+</html>
